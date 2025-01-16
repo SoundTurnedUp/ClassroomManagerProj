@@ -47,7 +47,7 @@
             // 
             // teachersButton
             // 
-            teachersButton.Location = new Point(23, 95);
+            teachersButton.Location = new Point(23, 19);
             teachersButton.Name = "teachersButton";
             teachersButton.Size = new Size(150, 61);
             teachersButton.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // subjectsButton
             // 
-            subjectsButton.Location = new Point(23, 19);
+            subjectsButton.Location = new Point(23, 95);
             subjectsButton.Name = "subjectsButton";
             subjectsButton.Size = new Size(150, 61);
             subjectsButton.TabIndex = 2;

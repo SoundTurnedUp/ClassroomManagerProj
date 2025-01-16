@@ -23,8 +23,25 @@ namespace ClassroomManagerProj
         private void AddButton_Click(object sender, EventArgs e)
         {
             string name = textBoxName.Text;
-            int age = int.Parse(textBoxAge.Text);
+            string ageText = textBoxAge.Text;
             string address = textBoxAddress.Text;
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(ageText) || string.IsNullOrWhiteSpace(address))
+            {
+                errorLabel.Text = "Fields cannot be empty";
+                errorLabel.ForeColor = Color.Red;
+                errorLabel.Visible = true;
+                return;
+            }
+
+            if (!int.TryParse(ageText, out int age))
+            {
+                errorLabel.Text = "Age must be a valid number";
+                errorLabel.ForeColor= Color.Red;
+                errorLabel.Visible = true;
+                return;
+            }
+
+            errorLabel.Visible = false;
 
             Student student = new Student(name, age, address);
             StudentsList.Add(student);
@@ -33,6 +50,15 @@ namespace ClassroomManagerProj
             textBoxName.Clear();
             textBoxAge.Clear();
             textBoxAddress.Clear();
+        }
+        public string GetAsString()
+        {
+            string name = textBoxName.Text;
+            string ageText = textBoxAge.Text;
+            string address = textBoxAddress.Text;
+
+            string formattedString = string.Format($"{name}, {ageText}, {address}");
+            return formattedString;
         }
         private void DisplayStudents()
         {

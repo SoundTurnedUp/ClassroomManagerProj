@@ -31,6 +31,7 @@
             LeftBox = new GroupBox();
             studentsListBox = new ListBox();
             RightBox = new GroupBox();
+            errorLabel = new Label();
             AddButton = new Button();
             textBoxAddress = new TextBox();
             textBoxAge = new TextBox();
@@ -65,6 +66,7 @@
             // 
             // RightBox
             // 
+            RightBox.Controls.Add(errorLabel);
             RightBox.Controls.Add(AddButton);
             RightBox.Controls.Add(textBoxAddress);
             RightBox.Controls.Add(textBoxAge);
@@ -80,6 +82,15 @@
             RightBox.TabStop = false;
             RightBox.Text = "Add Student";
             // 
+            // errorLabel
+            // 
+            errorLabel.AutoSize = true;
+            errorLabel.Location = new Point(33, 436);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(0, 15);
+            errorLabel.TabIndex = 8;
+            errorLabel.Visible = false;
+            // 
             // AddButton
             // 
             AddButton.Location = new Point(321, 426);
@@ -92,21 +103,21 @@
             // 
             // textBoxAddress
             // 
-            textBoxAddress.Location = new Point(157, 175);
+            textBoxAddress.Location = new Point(157, 167);
             textBoxAddress.Name = "textBoxAddress";
             textBoxAddress.Size = new Size(237, 23);
             textBoxAddress.TabIndex = 6;
             // 
             // textBoxAge
             // 
-            textBoxAge.Location = new Point(157, 129);
+            textBoxAge.Location = new Point(157, 127);
             textBoxAge.Name = "textBoxAge";
             textBoxAge.Size = new Size(237, 23);
             textBoxAge.TabIndex = 5;
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(157, 81);
+            textBoxName.Location = new Point(157, 87);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(237, 23);
             textBoxName.TabIndex = 4;
@@ -114,7 +125,7 @@
             // studentNameLabel
             // 
             studentNameLabel.AutoSize = true;
-            studentNameLabel.Location = new Point(33, 84);
+            studentNameLabel.Location = new Point(33, 90);
             studentNameLabel.Name = "studentNameLabel";
             studentNameLabel.Size = new Size(89, 15);
             studentNameLabel.TabIndex = 3;
@@ -123,7 +134,7 @@
             // studentAddressLabel
             // 
             studentAddressLabel.AutoSize = true;
-            studentAddressLabel.Location = new Point(33, 178);
+            studentAddressLabel.Location = new Point(33, 170);
             studentAddressLabel.Name = "studentAddressLabel";
             studentAddressLabel.Size = new Size(99, 15);
             studentAddressLabel.TabIndex = 2;
@@ -132,7 +143,7 @@
             // studentAgeLabel
             // 
             studentAgeLabel.AutoSize = true;
-            studentAgeLabel.Location = new Point(33, 132);
+            studentAgeLabel.Location = new Point(33, 130);
             studentAgeLabel.Name = "studentAgeLabel";
             studentAgeLabel.Size = new Size(78, 15);
             studentAgeLabel.TabIndex = 1;
@@ -141,7 +152,7 @@
             // studentInfoLabel
             // 
             studentInfoLabel.AutoSize = true;
-            studentInfoLabel.Location = new Point(33, 39);
+            studentInfoLabel.Location = new Point(33, 40);
             studentInfoLabel.Name = "studentInfoLabel";
             studentInfoLabel.Size = new Size(117, 15);
             studentInfoLabel.TabIndex = 0;
@@ -188,5 +199,6 @@
         private TextBox textBoxAge;
         private TextBox textBoxName;
         private Button exitButton;
+        private Label errorLabel;
     }
 }

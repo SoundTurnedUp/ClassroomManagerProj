@@ -2,7 +2,7 @@ namespace ClassroomManagerProj
 {
     public partial class CMMenu : Form
     {
-        private List<Student> StudentsList = new List<Student>();
+        ClassModel classModel = new ClassModel();
         public CMMenu()
         {
             InitializeComponent();
@@ -10,14 +10,16 @@ namespace ClassroomManagerProj
 
         private void TeacherButton_Click(object sender, EventArgs e)
         {
-
+            TeachersMenu teacherMenu = new TeachersMenu(classModel.GetTeachersList());
+            teacherMenu.ShowDialog();
+            classModel.SaveToFile();
         }
 
         private void StudentButton_Click(object sender, EventArgs e)
         {
-            StudentMenu studentMenu = new StudentMenu(StudentsList);
+            StudentMenu studentMenu = new StudentMenu(classModel.GetStudentsList());
             studentMenu.ShowDialog();
-            StudentsList = studentMenu.GetStudentList();
+            classModel.SaveToFile();
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
