@@ -1,0 +1,9 @@
+3
+Keane,16,m18
+Gabo,17,M18
+Oscar,16,M14
+
+3
+Mr. ,Dittman,Computer Science,21
+Mr. ,Dawber,Computer Science,9
+Dr. ,O'Brien,Spanish,2
